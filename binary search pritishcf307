@@ -1,0 +1,642 @@
+#include<bits/stdc++.h>
+#include<math.h>
+#include<string.h>
+#include<vector>
+#include<stdlib.h>
+using namespace std;
+#define debug(x) cout << #x << " " << x << endl;
+typedef long long int ll;
+typedef long double lld;
+ 
+/*#define debug(x);
+printf(x);*/
+ 
+void init()
+{
+  #ifndef ONLINE_JUDGE
+  freopen("input.txt" , "r"  ,stdin); 
+  freopen("output.txt" , "w" ,stdout);
+  #endif
+ 
+}
+ 
+void  debug_()
+{
+  #ifndef ONLINE_JUDGE
+  freopen("input.txt" , "r"  ,stdin); 
+  freopen("output.txt" , "w" ,stdout);
+  #endif
+  #ifndef ONLINE_JUDGE
+  freopen("error.txt","w",stderr);
+  #endif 
+  
+} 
+
+
+const int MAXN = (int)((1e5) + 100);
+int gcd(int a, int b) { if (a == 0) return b; return gcd(b % a, a);}
+int max(int a, int b) {if (a > b) return a; else return b;}
+int min(int a, int b) {if (a < b) return a; else return b;}
+ 
+ 
+void precision(int a) 
+{
+  cout << setprecision(a) << fixed;
+}
+
+
+//** pritishcf307 **//
+//**------------------------------------------------------------------------------------------------------**/
+
+
+
+
+int main()
+{
+  init();
+
+
+
+implementation of normal binary search
+
+
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+
+  ll hi=n-1,lo=0,mid,ans;
+
+  while(hi-lo >=0)
+  {
+    mid=(hi+lo)/2;
+    if(v[mid]==x)
+    {
+      ans=mid;
+      found=true;
+      break;
+    }
+    else if(v[mid] < x)
+    {
+      lo=mid+1;
+    }
+    else
+    {
+      hi=mid;
+    }
+  }
+  if(found==true)
+    {
+      cout << ans << endl;
+    }
+    else
+    {
+      cout << -1 << endl;
+
+
+
+
+
+
+  first occurance of an element
+
+
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+
+  ll hi=n-1,lo=0,mid,ans;
+
+  while(hi-lo>=0)
+  {
+    mid = (hi+lo)/2;
+    if(v[mid]==x)
+    {
+      ans=mid;
+      hi=mid-1;
+      continue;
+    }
+    if(v[mid] < x)
+    {
+      lo=mid+1;
+    }
+    else
+    {
+      hi=mid+1;
+    }
+  }
+  cout << ans << endl;
+
+
+
+
+  finding th last occurence of an element
+
+
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+
+  ll lo=0,hi=n-1,mid,ans;
+  while(hi-lo >=0)
+  {
+    mid=(hi+lo)/2;
+    if(v[mid]==x)
+    {
+      ans=mid;
+      lo=mid+1;
+      continue;
+    }
+    if(v[mid] < x)
+    {
+      lo=mid +1;
+    }
+    else
+    {
+      hi=mid-1;
+    }
+  }
+  cout << ans << endl;
+
+}
+
+
+finding the lowerbound of an element(condition of >=)
+
+for(int i=0;i<n;i++)
+{
+  ll a;
+  cin >> a;
+  v.push_back(a);
+}
+
+ll hi=n-1,lo=0,mid,ans;
+
+while(hi-lo>=0)
+{
+  mid=(hi+lo)/2;
+  if(v[mid] >= x)
+  {
+
+    ans=mid;
+    hi=mid-1;
+  }
+  else
+  {
+    lo=mid+1;
+  }
+}
+cout << v[ans] << endl;
+}
+
+
+finding the upperbound of an element(condition of >)
+
+for(int i=0;i<n;i++)
+{
+  ll a;
+  cin >> a;
+  v.push_back(a);
+}
+ll hi=n-1,lo=0,mid,ans;
+while(hi-lo >=0)
+{
+  ll mid=(hi+lo)/2;
+  if(v[mid] > x)
+  {
+    ans=mid;
+    hi=mid-1;
+  }
+  else
+  {
+    lo=mid+1;
+  }
+}
+  cout << v[ans] << endl;
+
+
+
+
+implementation of both lower and upperbound  for counting the number of occurances;
+
+ for(int i=0;i<n;i++)
+ {
+  ll a;
+  cin >> a;
+  v.push_back(a);
+ }
+ ll h1=n-1,l1=0,a1,m1;
+ while(h1-l1 >= 0)
+ {
+  ll mid=(h1+l1)/2;
+  if(v[m1] >=x)
+  {
+    a1=m1;
+    h1=m1-1;
+  }
+  else
+  {
+    l1=m1+1;
+  }
+ }
+ ll h2=n-1,l2=0,a2,m2;
+ while(h2-l2 >= 0)
+ {
+  ll mid=(h2+l2)/2;
+  if(v[m2] > x)
+  {
+    a2=m2;
+    h2=m2-1;
+  }
+  else
+  {
+    l1=m2+1;
+  }
+ }
+ cout << a2-a1 << endl;
+
+
+
+ leetcode minimum element in an rotated array
+ 
+  ll n,ans;
+  cin >> n;
+  vector<int>v;
+
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+
+  ll lo=0 , hi=n-1 , mid;
+  while(hi-lo >= 0)
+  {
+    
+    mid =  (hi+lo)/2;
+    if(v[mid] < v[hi])
+    {
+      hi=mid;
+    }
+    else
+    {
+      lo=mid+1;
+    }
+  }
+  cout << hi << endl;
+
+
+
+
+
+
+leetcode minimum element in a sorted  array having  duplicates
+
+  its better to do actually linear search when the elemets are rotated
+  because we are doing lo++ and hi-- same 2 pointer are going and coming so 
+  the ans id o(n) else the anwser is o(logn);
+
+  ll n;
+  cin >> n;
+  vector<int> v;
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+
+  ll lo=0;
+  ll hi=n-1;
+  ll mid,ans;
+  while(hi-lo >= 0)
+  {
+    mid=(lo+hi)/2;
+    ans=mid;
+    if(v[mid] < v[hi])
+    {
+      hi--;
+    }
+    else
+    {
+      lo++;
+    }
+  }
+   cout << lo << endl;
+
+
+
+find the element in an sorted array that is rotated from a particular index;
+basically the array is pivoted from a particular point and just been to find a 
+particular index basically returns the index;
+
+ll n;
+cin >> n;
+ll x;
+cin >> x;
+bool found=false;
+vector<int> v;
+for(int i=0;i<n;i++)
+{
+  ll a;
+  cin >> a;
+  v.push_back(a);
+}
+
+ll lo=0;
+ll hi=n-1;
+ll mid,ans;
+ 
+while(hi-lo >= 0)
+{
+  mid=(lo+hi)/2;
+  if(v[mid]==x)
+  {
+    found=true;
+    ans=mid;
+    break;
+  }
+  //left part is sorted
+  else if(v[lo] <= v[mid])
+  {
+    if(x>=v[lo] && x<=v[mid])
+    {
+      hi=mid-1;
+    }
+    else
+    {
+      lo=mid+1;
+    }
+  }
+  else
+  {
+    if(x>=v[mid] && x<=v[hi])
+    {
+      lo=mid+1;
+    }
+    else
+    {
+      hi=mid-1;
+    }
+  }
+}
+  if(found==true)
+  {
+    cout << ans << endl;
+  }
+  else
+  {
+    cout << -1 << endl;
+  }
+  return 0;
+
+
+ find the index that contains a peak
+
+ll n;
+cin >> n;
+vector<int> v;
+for(int i=0;i<n;i++)
+{
+  ll a;
+  cin >> a;
+  v.push_back(a);
+}
+ll lo=0;
+ll hi=n-1;
+ll mid;
+while(hi-lo>0)
+{
+  mid=(hi+lo)/2;
+  if(v[mid]>v[mid+1])
+  {
+    hi=mid;
+  }
+  else
+  {
+    lo=mid+1;
+  }
+}
+  cout << lo << endl;
+  also hi can be taken because lo and hi are on same point;
+
+
+  minimum  element  such that  after  dividing we  get  the threshold
+
+
+vector<int> v;
+ll  n;
+ll x;
+
+ll ceiling(ll n,ll k)
+{
+  ll z=n/k;
+  if(n  % k==0)
+  {
+    return n/k;
+  }
+  else
+  {
+    return (n/k)+1;
+  }
+}
+
+ll helper(ll k)
+{
+  ll sum=0;
+  for(int i=0;i<v.size();i++)
+  {
+    sum+=ceiling(v[i],k);
+  }
+  return sum;
+}
+
+
+
+int main()
+{
+  init();
+  cin >>  n;
+  cin >> x;
+  ll i;
+  bool found=false;
+  
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+  
+  ll lo=0;
+  ll hi=*max_element(v.begin(),v.end());
+  ll ans,mid;
+
+
+  while(hi-lo>=0)
+  {
+    mid=(hi+lo)/2;
+    ans=mid;
+    if(helper(mid) >= x)
+    {
+      lo=mid+1;
+    }
+    else
+    {
+      hi=mid-1;
+    }
+  }
+  cout  << ans << endl;
+}
+
+
+
+
+
+
+
+
+
+split array largest sum leetcode;
+basically we have  to find the minimal of the maximal sum;
+
+
+function declarition outside
+
+ll helper(vector<int> v,ll n,ll  x)
+{
+  ll count=0;
+  ll sum=0;
+  for(int i=0;i<n;i++)
+  {
+    if(v[i] > x)
+    {
+      return 0; 
+    }
+    if(sum+v[i] > x)
+    {
+      count++;
+      sum=v[i];
+    }
+    else
+      {
+        sum+=v[i];
+      }
+  }
+  return count;
+}
+
+
+  int main()
+  {
+  init();
+  ll  n;
+  cin >>  n;
+  ll m;
+  cin >> m;
+
+  vector<int> v;
+  for(int i=0;i<n;i++)
+  {
+    ll a;
+    cin >> a;
+    v.push_back(a);
+  }
+  ll lo=0;
+  ll hi=*max_element(v.begin(),v.end());
+  ll ans=0;
+
+  while(hi-lo>0)
+  {
+    ll mid=(lo+hi)/2;
+    ans=mid;
+    if(helper(v,n,mid) > m)
+    {
+      lo=mid+1;
+    } 
+    else
+    {
+      hi=mid-1;
+    }
+  }
+  cout << ans  << endl;
+}
+
+
+
+
+aggressive cows the last question on binary search and one of the best questions ever
+
+
+vector<int> v;
+ll n;
+ll m ;
+ll ans;
+
+
+bool helper(ll n)
+{
+  ll last=-1;
+  ll count=n;
+  for(int i=0;i<v.size();i++)
+  {
+    if(v[i]-last >= m);
+    {
+      count--;
+      last=v[i];    }
+  }
+  if(count==0)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+
+int  main()
+{
+  init();
+  ll t;
+  cin >> t;
+  while(t--)
+  {
+    cin >> n >> m;
+    for(int i=0;i<n;i++)
+    {
+      ll a;
+      cin >> a;
+      v.push_back(a);
+    }
+    int lo=0;
+    ll hi=*max_element(v.begin(),v.end());
+    sort(v.begin(), v.end());
+
+    while(hi-lo>=0)
+    {
+      ll mid=(hi+lo)/2;
+      ans-mid;
+      if(helper(mid) > m)
+      {
+        lo=mid+1;
+      }
+      else
+      {
+        hi=mid-1;
+      }
+    }
+   }
+    cout << ans << endl;
+}
+return 0;
