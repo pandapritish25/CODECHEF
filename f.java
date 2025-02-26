@@ -21,8 +21,8 @@ public class f {
 
 		local variable
 		int x = 1;
-		if there are various methods , then we can have them inside same name but inside local , we wont be having them
-		inside the same name
+		// if there are various methods , then we can have them inside same name but inside local , we wont be having them
+		// inside the same name
 
 		Scanner scanner = new Scanner(System.in);
 
