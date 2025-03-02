@@ -31,7 +31,7 @@ public class e {
 		}
 
 
-		for loops
+		// for loops
 
 
 		for(int i = 10; i >= 1; i--) {
