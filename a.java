@@ -117,3 +117,26 @@ public class a {
 		 System.out.println("The adjective is" + adjective);
 	}
 }
+
+
+
+public class car {
+	String model;
+	String year;
+
+	car(String model , String year) {
+		this.model = model;
+		this.year = year;
+	}
+	public void drive() {
+		System.out.println("I want to drive the car");
+	}
+}
+public class j {
+	public static void main(String[] args) {
+		car c = new car("skoda" , "2013");
+		System.out.println(c.model);
+		System.out.println(c.year);
+		c.drive();
+	}
+}
